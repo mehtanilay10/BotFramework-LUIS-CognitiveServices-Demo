@@ -1,0 +1,747 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.2",
+  "name": "MyFirstLuisApp",
+  "desc": "MyFirstLuisApp",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Display"
+    },
+    {
+      "name": "Headlines"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Note.AddToNote",
+      "inherits": {
+        "domain_name": "Note",
+        "model_name": "AddToNote"
+      }
+    },
+    {
+      "name": "Note.Create",
+      "inherits": {
+        "domain_name": "Note",
+        "model_name": "Create"
+      }
+    },
+    {
+      "name": "Sources"
+    },
+    {
+      "name": "Topical"
+    },
+    {
+      "name": "Welcome"
+    }
+  ],
+  "entities": [
+    {
+      "name": "NewsApp.TopicName"
+    },
+    {
+      "name": "Note.AppName",
+      "inherits": {
+        "domain_name": "Note",
+        "model_name": "AppName"
+      }
+    },
+    {
+      "name": "Note.Text",
+      "inherits": {
+        "domain_name": "Note",
+        "model_name": "Text"
+      }
+    },
+    {
+      "name": "Note.Title",
+      "inherits": {
+        "domain_name": "Note",
+        "model_name": "Title"
+      }
+    }
+  ],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "NewsApp.SourceName",
+      "subLists": [
+        {
+          "canonicalForm": "TechCrunch",
+          "list": [
+            "tc"
+          ]
+        },
+        {
+          "canonicalForm": "The Verge",
+          "list": [
+            "verge"
+          ]
+        },
+        {
+          "canonicalForm": "The Next Web",
+          "list": [
+            "tnw"
+          ]
+        }
+      ]
+    }
+  ],
+  "bing_entities": [
+    "number"
+  ],
+  "model_features": [
+    {
+      "name": "Hi",
+      "mode": true,
+      "words": "Hi,hello,hey,howdy,yeah,oh,sorry,greetings,good day,yep,welcome,well",
+      "activated": true
+    },
+    {
+      "name": "Topic",
+      "mode": true,
+      "words": "topic,subject,issue,question,matter,problem,point",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "\" i want to create a note of title shopping list \" \" \" \" \"",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 35,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "a new note of name business solutions",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 19,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "a new note please",
+      "intent": "Note.Create",
+      "entities": []
+    },
+    {
+      "text": "add a note to add salsa to the grocery list in onenote",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 47,
+          "endPos": 53
+        }
+      ]
+    },
+    {
+      "text": "add a task to wunderlist",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 14,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "add another sublist called supplies .",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 27,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "add buy milk to wunderlist",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 4,
+          "endPos": 11
+        },
+        {
+          "entity": "Note.AppName",
+          "startPos": 16,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "add fred george to onenote",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 4,
+          "endPos": 14
+        },
+        {
+          "entity": "Note.AppName",
+          "startPos": 19,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "add friends to party list in memos",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 4,
+          "endPos": 10
+        },
+        {
+          "entity": "Note.Title",
+          "startPos": 15,
+          "endPos": 19
+        },
+        {
+          "entity": "Note.AppName",
+          "startPos": 29,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "add hot dogs to supermarket list",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 4,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "add item to onenote inbox",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 12,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "add mark to guest list",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 4,
+          "endPos": 7
+        },
+        {
+          "entity": "Note.Title",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "add oatmeal to shopping list .",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 4,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "add salsa to the grocery list in onenote",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 33,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "add salsa to the grocery list onenote",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 30,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "add tasks to wunderlist",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 4,
+          "endPos": 8
+        },
+        {
+          "entity": "Note.AppName",
+          "startPos": 13,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "add to my existing shopping list one onenote",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 37,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "add to wish - list computer ram",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 7,
+          "endPos": 12
+        },
+        {
+          "entity": "Note.Text",
+          "startPos": 19,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "add to wunderlist review notes from ibp",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 7,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "at grocery list add milk",
+      "intent": "Note.AddToNote",
+      "entities": []
+    },
+    {
+      "text": "can you add something to onenote",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 25,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "can you set a note up to mom",
+      "intent": "Note.Create",
+      "entities": []
+    },
+    {
+      "text": "cancel a note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel my last note",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change this entry to fifty two",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 21,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "copy note to joe",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "create a new list i want to try onenote .",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 32,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "create a note of name stop internet tomorrow",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 22,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "create for me a note about car oil",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 27,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "create my favorites note",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 7,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "create note with notepad",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 17,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "display 20 cards",
+      "intent": "Display",
+      "entities": []
+    },
+    {
+      "text": "display news from techcrunch",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "display news from the next web",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "display only 10 cards",
+      "intent": "Display",
+      "entities": []
+    },
+    {
+      "text": "display only 5 card",
+      "intent": "Display",
+      "entities": []
+    },
+    {
+      "text": "display only 5 cards",
+      "intent": "Display",
+      "entities": []
+    },
+    {
+      "text": "don ' t take any other notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "i ' d like to create a note for karla birthday",
+      "intent": "Note.Create",
+      "entities": []
+    },
+    {
+      "text": "let ' s create a note of title outing with martha",
+      "intent": "Note.Create",
+      "entities": []
+    },
+    {
+      "text": "let me set a note up to marco",
+      "intent": "Note.Create",
+      "entities": []
+    },
+    {
+      "text": "nilay",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "onenote add salsa to grocery list",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 0,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "please allow edit notes",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "recent news of topic",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "save the current note",
+      "intent": "Note.Create",
+      "entities": []
+    },
+    {
+      "text": "send lighter fluid to onenote",
+      "intent": "Note.AddToNote",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 5,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "send the last two notes to fisher via bluetooth",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "show me headlines",
+      "intent": "Headlines",
+      "entities": []
+    },
+    {
+      "text": "show me news about topic",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "show me news from tc",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "show me news from techcrunch",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "show me news from verge",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "show me top 10 headlines",
+      "intent": "Display",
+      "entities": []
+    },
+    {
+      "text": "show me top stories",
+      "intent": "Headlines",
+      "entities": []
+    },
+    {
+      "text": "show me treading news",
+      "intent": "Headlines",
+      "entities": []
+    },
+    {
+      "text": "show news from the next web",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "show news from tnw",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "stop reading the note",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Note.Text",
+          "startPos": 0,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "temp delete frisbee notes",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 12,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "to buy list",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 3,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "treading of issue",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "treading of issue name",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 18,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "treading of issue topicname",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 18,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "treading of topic",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "treading of topicname",
+      "intent": "Topical",
+      "entities": []
+    },
+    {
+      "text": "type in notepad",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.AppName",
+          "startPos": 8,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "update note of number one",
+      "intent": "Note.AddToNote",
+      "entities": []
+    },
+    {
+      "text": "waffles recipe is my new note to be created",
+      "intent": "Note.Create",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 0,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "work",
+      "intent": "None",
+      "entities": [
+        {
+          "entity": "Note.Title",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "write a note to carolina asking her to check her inbox",
+      "intent": "Note.Create",
+      "entities": []
+    }
+  ]
+}

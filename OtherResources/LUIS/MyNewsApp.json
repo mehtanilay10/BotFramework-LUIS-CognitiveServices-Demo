@@ -1,0 +1,190 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.2",
+  "name": "MyNewsApp",
+  "desc": "News App",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Display"
+    },
+    {
+      "name": "ForVersionTwo"
+    },
+    {
+      "name": "Headlines"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Sources"
+    },
+    {
+      "name": "Topical"
+    },
+    {
+      "name": "Welcome"
+    }
+  ],
+  "entities": [
+    {
+      "name": "NewsApp.TopicName"
+    }
+  ],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "NewsApp.SourceName",
+      "subLists": [
+        {
+          "canonicalForm": "TechCrunch",
+          "list": [
+            "tc"
+          ]
+        },
+        {
+          "canonicalForm": "The Verge",
+          "list": [
+            "verge"
+          ]
+        },
+        {
+          "canonicalForm": "The Next Web",
+          "list": [
+            "tnw"
+          ]
+        }
+      ]
+    }
+  ],
+  "bing_entities": [
+    "number"
+  ],
+  "model_features": [
+    {
+      "name": "Hi",
+      "mode": true,
+      "words": "Hi,hello,hey,howdy,yeah,oh,sorry,greetings,good day,yep,welcome,well",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "display 5 cards",
+      "intent": "Display",
+      "entities": []
+    },
+    {
+      "text": "display news from techcrunch",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "display only 10 cards",
+      "intent": "Display",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "hy",
+      "intent": "ForVersionTwo",
+      "entities": []
+    },
+    {
+      "text": "recent news of topic",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "show me headlines",
+      "intent": "Headlines",
+      "entities": []
+    },
+    {
+      "text": "show me news about topic",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 19,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "show me news from tc",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "show me news from techcrunch",
+      "intent": "Sources",
+      "entities": []
+    },
+    {
+      "text": "show me top 10 headlines",
+      "intent": "Display",
+      "entities": []
+    },
+    {
+      "text": "show me top stories",
+      "intent": "Headlines",
+      "entities": []
+    },
+    {
+      "text": "show me treading news",
+      "intent": "Headlines",
+      "entities": []
+    },
+    {
+      "text": "treading news of microsoft",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 17,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "treading of facebook",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 12,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "treading of topic",
+      "intent": "Topical",
+      "entities": [
+        {
+          "entity": "NewsApp.TopicName",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    }
+  ]
+}
